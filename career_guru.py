@@ -81,7 +81,7 @@ with tabs[1]:
             """
             result = llm.invoke(career_prompt).content
             st.session_state.career_qna.append(("You", question))
-            st.session_state.career_qna.append(("CareerBot", result))
+            st.session_state.career_qna.append(("Career Guru", result))
 
     if st.session_state.explore_role:
         for speaker, msg in st.session_state.career_qna:
