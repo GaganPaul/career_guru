@@ -1,3 +1,9 @@
-streamlit==1.26.0
-langchain==0.0.262
-langchain-groq==0.0.35
+streamlit
+langchain
+langchain-groq
+docx2txt
+pdfplumber
+pypdf2
+pillow
+markdown-it-py
+tqdm
