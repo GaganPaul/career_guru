@@ -1,17 +1,14 @@
 import streamlit as st
-import os
 from langchain_groq import ChatGroq
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
-from dotenv import load_dotenv
 
-# Load API key from .env file
-load_dotenv()
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+# Load API key from Streamlit secrets.toml
+GROQ_API_KEY = st.secrets.get("GROQ_API_KEY")
 
 # Check API key
 if not GROQ_API_KEY:
-    st.error("Please add your GROQ_API_KEY to a .env file.")
+    st.error("Please add your GROQ_API_KEY to Streamlit secrets.toml.")
     st.stop()
 
 # Set up LangChain LLM with model
@@ -20,6 +17,7 @@ llm = ChatGroq(
     model="llama3-8b-8192",  # or omit if unsure
     temperature=0.7
 )
+
 memory = ConversationBufferMemory()
 conversation = ConversationChain(llm=llm, memory=memory, verbose=False)
 
