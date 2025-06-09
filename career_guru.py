@@ -89,4 +89,4 @@ st.markdown('</div>', unsafe_allow_html=True)
 
 # Footer
 st.markdown("""<hr style="border: 0.5px solid #333">""", unsafe_allow_html=True)
-st.markdown("""<p style='text-align: center; font-size: small;'>Built with ❤️ using LangChain, Groq & Streamlit</p>""", unsafe_allow_html=True)
+#st.markdown("""<p style='text-align: center; font-size: small;'>Built with ❤️ using LangChain, Groq & Streamlit</p>""", unsafe_allow_html=True)
