@@ -141,3 +141,4 @@ with tabs[3]:
 # ---------- Footer ----------
 st.markdown("<hr><center>© 2025 Career Guru</center>",
             unsafe_allow_html=True)
+#
