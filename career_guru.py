@@ -11,7 +11,7 @@ from streamlit_option_menu import option_menu
 
 # Firebase Initialization
 if not firebase_admin._apps:
-    cred = credentials.Certificate("C:\\Users\\Gagan\\OneDrive\\Desktop\\career_guru_stream\\careerguru-f1540-firebase-adminsdk-fbsvc-e0a2a00921.json")  # Path to your Firebase service account key
+    cred = credentials.Certificate(st.secrets["FIREBASE_CREDENTIALS"])
     firebase_admin.initialize_app(cred)
 db = firestore.client()
 
