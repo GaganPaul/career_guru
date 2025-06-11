@@ -4,6 +4,7 @@ from langchain_groq import ChatGroq
 from langchain.prompts import PromptTemplate
 import docx2txt
 import pdfplumber
+import json
 import os
 import firebase_admin
 from firebase_admin import credentials, firestore, auth
@@ -11,7 +12,8 @@ from streamlit_option_menu import option_menu
 
 # Firebase Initialization
 if not firebase_admin._apps:
-    cred = credentials.Certificate(st.secrets["FIREBASE_CREDENTIALS"])
+    firebase_config = json.loads(st.secrets["FIREBASE_CREDENTIALS"])
+    cred = credentials.Certificate.from_json(firebase_config)
     firebase_admin.initialize_app(cred)
 db = firestore.client()
 
